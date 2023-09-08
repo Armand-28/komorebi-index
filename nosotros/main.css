@@ -1,0 +1,531 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Caveat: "Caveat", cursive;
+    --YanoneKaffeesatz: "Yanone Kaffeesatz", sans-serif;
+    --OpenSans: "Open Sans", sans-serif;    
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    font-family: var(--YanoneKaffeesatz);
+}
+
+aside {
+    position: relative;
+    margin: auto;
+    left: 0px;
+    top: 710px;
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(2, 200px);
+    gap: 400px;
+    justify-content: center;
+    background-color:black;
+    width: 100%;
+    height: 600px
+}
+
+.card {
+    position: relative;
+    top: 100px;
+    width: 600px;
+    height: 400px;
+    margin-left: -30%;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-image: url('../imagenes/MISION.png');
+    background-size: cover;
+}
+
+.card h1 {
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.card:hover svg {
+    scale: 0;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 19px;
+    color: #777;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+#menu {
+    position: relative;
+    background-color: #e90000;
+    width: 200px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    left: -200px;
+    z-index: 10;
+    transition: all .3s linear;
+    border: solid rgba(0, 0, 0, 0.121) 2px;
+}
+
+#menu.active {
+    opacity: 1;
+    left: 0;
+}
+
+.fa-xmark {
+    position: absolute;
+    right: -10px;
+    top: 18px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#menu ul {
+    position: absolute;
+    list-style: none;
+    font-family: var(--YanoneKaffeesatz);
+    font-size: 15px;
+    color: #FFFFFF;
+    top: -10px;
+}
+
+#menu ul li {
+    border-bottom: 2px solid #FF9F23;
+    padding: 10px;
+    padding-top: 35px;
+    padding-left: 10px;
+}
+
+#menu ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* vision */
+.cards {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    top: 100px;
+    margin-left: -20%;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-image: url('../imagenes/Vision.png');
+    background-size: cover;
+}
+
+
+.cards h1 {
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: 2px solid black;
+    text-shadow: 0px 5px 3px black;
+}
+
+.cards svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.cards__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cards:hover .cards__content {
+    transform: rotateX(0deg);
+}
+
+.cards__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.cards:hover svg {
+    scale: 0;
+}
+
+.cards__description {
+    margin: 10px 0 0;
+    font-size: 19px;
+    color: #777;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* final vision */
+
+.dir {
+    position: absolute;
+    top: 30px;
+    right: 600px;
+    text-align: center;
+    line-height: 40px;
+    font-family: var(--YanoneKaffeesatz);
+    font-weight: normal;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    animation: banner 10s infinite linear alternate;
+    background-size: 100% 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    top: 150px;
+    object-fit: cover;
+}
+
+@keyframes banner {
+
+    0%,
+    20% {
+        background-image: url("../imagenes/quienes-som22.jpg");
+    }
+
+    25%,
+    45% {
+        background-image: url("../imagenes/komorebi-quienes-somos.jpg");
+    }
+
+    50%,
+    70% {
+        background-image: url("../imagenes/quienes-somos-mk.jpg");
+    }
+
+    75%,
+    100% {
+        background-image: url("../imagenes/quienes-fotos.jpg");
+    }
+}
+
+.capa {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    object-fit: contain;
+}
+
+.info {
+    z-index: 1;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 300px;
+
+}
+
+.info h1 {
+    color: #fff;
+    font-size: 69px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.info p {
+    color: #c7c7c7;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.info a {
+    color: #fff;
+    text-decoration: none;
+    background: #e90000;
+    padding: 16px 37px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+/* ¿QUIENES SOMOS? TEXTO */
+.card-quienes {
+    left: 30%;
+    top: 630px;
+    position: relative;
+    padding: 20px;
+    width: 800px;
+    min-height: 80px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 5px 5px 8px #cbc5c5,
+               -5px -5px 8px #cbc5c5;
+    transition: 0.4s;
+  }
+  
+  .card-somos:hover {
+    translate: 0 -10px;
+  }
+  
+  .cardsom-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 15px 0 0 10px;
+    text-align: center;
+  }
+  
+  .cardsom-body {
+    margin: 13px 0 0 10px;
+    color: #000000;
+    font-size: 17px;
+    text-align: left;
+  }
+  
+
+/*boton*/
+
+.Btn {
+  width: 180px;
+  height: 40px;
+  border: none;
+  top: 10px;
+  left: 260px;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+.Btn::before {
+  position: absolute;
+  content: "¿Donde Encontrarnos?";
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Btn:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:active {
+  transform: scale(0.95);
+}
+
+/*google maps*/
+.mapa {
+    margin: 13%;
+    padding:1%;
+    width: 76%;
+    left: 10%;
+    margin-top: 3%;
+    min-height: 20%px;
+    grid-template-rows: 20px 50px 1fr 50px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+  }
+  
+  .mapa:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+  }
+  
+  .mapa-5 {
+    background: radial-gradient( #ffffff , #ffffff);
+  }
+  
+  @media (max-width: 1400px) {
+    .mapa {
+      justify-content: center;
+    }
+  }
+  .ubicacion{
+   margin-top: 150px;
+    text-align: center;
+    font-size: 120%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 40%;
+  }
+  
+  /* footer */
+  footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url('../imagenes/background-footer.svg');
+    background-size: cover;
+    height: 450px;
+    /*background-color: #d0f0f8;
+    -webkit-mask-image: url("../Images/background-footer.svg");
+    mask-image: url("../Images/background-footer.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;*/
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.box__footer .logo img{
+    width: 200px;
+}
+
+.box__footer .terms{
+    max-width: 350px;
+    margin-top: 5px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 17px;
+}
+
+.box__footer h2{
+    margin-bottom: 55px;
+    color: #343434;
+    font-weight: 700;
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+    margin-top: 10;
+}
+
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box__copyright p{
+    margin-top: 10px;
+    color: #7a7a7a;
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+/*Aquí termina el FOOTER*/
